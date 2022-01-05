@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/01/04/16-55-47/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>00图神经网络专题01开课班</title>
+    <url>/2022/01/05/13-43-40/</url>
+    <content><![CDATA[<h1 id="图神经网络开营仪式"><a href="#图神经网络开营仪式" class="headerlink" title="图神经网络开营仪式"></a>图神经网络开营仪式</h1><p>目录：</p>
+<ul>
+<li>为什么要学习图神经网络专题</li>
+<li>图神经网络专题技术演化路径</li>
+<li>发展历程与前进方向</li>
+<li>课程安排与学习推荐</li>
+<li>注意事项</li>
+</ul>
+<h2 id="为什么要学习图神经网络"><a href="#为什么要学习图神经网络" class="headerlink" title="为什么要学习图神经网络"></a>为什么要学习图神经网络</h2><p>深度学习的迫切需要</p>
+<ul>
+<li>许多实际应用场景中的数据是从非欧式空间生成的，如何将深度学习方法应用在图数据</li>
+<li>难度大：图的不规则性（无序节点、邻居数量不同）</li>
+<li>应用邻域广泛：电子商务、金融风控、推荐系统</li>
+</ul>
+<h2 id="GNN发展历程"><a href="#GNN发展历程" class="headerlink" title="GNN发展历程"></a>GNN发展历程</h2><p>三篇survey:</p>
+<p><code>A comprehensive survey on Graph Neural Networks</code></p>
+<p><code>Deep learning on Graph: A survey</code></p>
+<p><code>Graph Neural Network: A Review of Method and Applications</code></p>
+<p>一本书：</p>
+<p><code>Introduction to Graph Neural Networks</code></p>
+<h2 id="技术演化路径"><a href="#技术演化路径" class="headerlink" title="技术演化路径"></a>技术演化路径</h2><p>由人工向自动</p>
+<p>Node centralities:</p>
+<ul>
+<li>Degree (in/out)</li>
+<li>Betweeness</li>
+<li>closeness</li>
+<li>pagerank</li>
+</ul>
 ]]></content>
       <categories>
-        <category>进行测试</category>
+        <category>深度之眼</category>
       </categories>
       <tags>
-        <tag>测试</tag>
+        <tag>Graph neural network</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2022/01/04/22-10-24/</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
