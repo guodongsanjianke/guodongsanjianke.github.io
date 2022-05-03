@@ -20,30 +20,46 @@
     var CONFIG = {"hostname":"guodongsanjianke.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="生如逆旅，一苇以航">
-<meta property="og:type" content="website">
-<meta property="og:title" content="果冻三剑客">
-<meta property="og:url" content="http://guodongsanjianke.com/index.html">
+  <meta name="description" content="node2vec: Scalable Feature Learning for Networknode2vec:大规模网络节点的表征学习 作者： Adiya Grover, Jure Lekovec 单位: Stanford 发表会议及时间：kdd, 2016 文章链接：node2vec-kdd16.pdf (stanford.edu) 这篇文章讲的是node2vec方法，参考的课程为深度之眼的图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodevec">
+<meta property="og:url" content="http://guodongsanjianke.com/2022/01/07/10-54-05/index.html">
 <meta property="og:site_name" content="果冻三剑客">
-<meta property="og:description" content="生如逆旅，一苇以航">
+<meta property="og:description" content="node2vec: Scalable Feature Learning for Networknode2vec:大规模网络节点的表征学习 作者： Adiya Grover, Jure Lekovec 单位: Stanford 发表会议及时间：kdd, 2016 文章链接：node2vec-kdd16.pdf (stanford.edu) 这篇文章讲的是node2vec方法，参考的课程为深度之眼的图">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220107194603.png">
+<meta property="og:image" content="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220107203615.png">
+<meta property="og:image" content="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220107204829.png">
+<meta property="og:image" content="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220107212654.png">
+<meta property="og:image" content="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220110154554.png">
+<meta property="og:image" content="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220110154852.png">
+<meta property="og:image" content="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220110155530.png#">
+<meta property="og:image" content="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220110160121.png#">
+<meta property="og:image" content="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220110162100.png">
+<meta property="og:image" content="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220110162320.png">
+<meta property="og:image" content="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220113145633.png">
+<meta property="og:image" content="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220113145633.png">
+<meta property="article:published_time" content="2022-01-07T02:54:05.000Z">
+<meta property="article:modified_time" content="2022-01-14T08:05:14.973Z">
 <meta property="article:author" content="Ziwei Li">
+<meta property="article:tag" content="Graph neural network, nodevec">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220107194603.png">
 
-<link rel="canonical" href="http://guodongsanjianke.com/">
+<link rel="canonical" href="http://guodongsanjianke.com/2022/01/07/10-54-05/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>果冻三剑客</title>
+  <title>nodevec | 果冻三剑客</title>
   
 
 
@@ -186,9 +202,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -204,10 +221,9 @@
       <meta itemprop="name" content="果冻三剑客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/07/10-54-05/" class="post-title-link" itemprop="url">nodevec</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          nodevec
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -236,6 +252,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
   <span class="post-meta-item">
     
@@ -274,7 +297,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="node2vec-Scalable-Feature-Learning-for-Network"><a href="#node2vec-Scalable-Feature-Learning-for-Network" class="headerlink" title="node2vec: Scalable Feature Learning for Network"></a>node2vec: Scalable Feature Learning for Network</h1><p><strong>node2vec:大规模网络节点的表征学习</strong></p>
+        <h1 id="node2vec-Scalable-Feature-Learning-for-Network"><a href="#node2vec-Scalable-Feature-Learning-for-Network" class="headerlink" title="node2vec: Scalable Feature Learning for Network"></a>node2vec: Scalable Feature Learning for Network</h1><p><strong>node2vec:大规模网络节点的表征学习</strong></p>
 <p><strong>作者</strong>： Adiya Grover, Jure Lekovec</p>
 <p><strong>单位</strong>: Stanford</p>
 <p><strong>发表会议及时间</strong>：kdd, 2016</p>
@@ -401,227 +424,89 @@
 <h6 id="注：每个点邻居怎么取的顺序是不确定的"><a href="#注：每个点邻居怎么取的顺序是不确定的" class="headerlink" title="注：每个点邻居怎么取的顺序是不确定的"></a>注：每个点邻居怎么取的顺序是不确定的</h6><h2 id="Random-walk"><a href="#Random-walk" class="headerlink" title="Random walk"></a>Random walk</h2><p>论文核心：传统的random walk 不具备探索节点不同类型领域的能力</p>
 <p>认为网络同时具备节点和同质相似性</p>
 
-      
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
+        <div class="reward-container">
+  <div>觉得文章写得不错就请博主喝杯奶茶吧(*￣∇￣*)</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
       
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://guodongsanjianke.com/2022/01/05/13-43-40/">
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="Ziwei Li 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Ziwei Li 支付宝">
+        <p>支付宝</p>
+      </div>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Jerry.jpg">
-      <meta itemprop="name" content="Ziwei Li">
-      <meta itemprop="description" content="生如逆旅，一苇以航">
-    </span>
+  </div>
+</div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="果冻三剑客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/05/13-43-40/" class="post-title-link" itemprop="url">图神经网络专题导言</a>
-        </h2>
+        
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
 
-              <time title="创建时间：2022-01-05 13:43:40 / 修改时间：17:13:11" itemprop="dateCreated datePublished" datetime="2022-01-05T13:43:40+08:00">2022-01-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E4%B9%8B%E7%9C%BC/" itemprop="url" rel="index"><span itemprop="name">深度之眼</span></a>
-                </span>
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://mp.weixin.qq.com/s/ah1bhf8k0gRVoYAn4FoozQ">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
             </span>
 
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/01/05/13-43-40/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/01/05/13-43-40/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
+            <span class="label">微信</span>
+          </a>
         </div>
-      </header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">
+            <span class="icon">
+              <i class="fab fa-zhihu"></i>
+            </span>
 
-      
-          <h1 id="图神经网络导言"><a href="#图神经网络导言" class="headerlink" title="图神经网络导言"></a>图神经网络导言</h1><h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><ul>
-<li>为什么要学习图神经网络专题</li>
-<li>图神经网络专题技术演化路径</li>
-<li>发展历程与前进方向</li>
-<li>课程安排与学习推荐</li>
-<li>注意事项</li>
-</ul>
-<h2 id="为什么要学习图神经网络"><a href="#为什么要学习图神经网络" class="headerlink" title="为什么要学习图神经网络"></a>为什么要学习图神经网络</h2><p>深度学习的迫切需要</p>
-<ul>
-<li>许多实际应用场景中的数据是从非欧式空间生成的，如何将深度学习方法应用在图数据</li>
-<li>难度大：图的不规则性（无序节点、邻居数量不同）</li>
-<li>应用邻域广泛：电子商务、金融风控、推荐系统</li>
-</ul>
-<h2 id="GNN发展历程"><a href="#GNN发展历程" class="headerlink" title="GNN发展历程"></a>GNN发展历程</h2><p>三篇survey:</p>
-<p><code>A comprehensive survey on Graph Neural Networks</code></p>
-<p><code>Deep learning on Graph: A survey</code></p>
-<p><code>Graph Neural Network: A Review of Method and Applications</code></p>
-<p>一本书：</p>
-<p><code>Introduction to Graph Neural Networks</code></p>
-<h2 id="技术演化路径"><a href="#技术演化路径" class="headerlink" title="技术演化路径"></a>技术演化路径</h2><p>由人工向自动</p>
-<p>Node centralities:</p>
-<ul>
-<li>Degree (in/out)</li>
-<li>Betweeness</li>
-<li>closeness</li>
-<li>pagerank</li>
-</ul>
-<h2 id="推荐学习路径"><a href="#推荐学习路径" class="headerlink" title="推荐学习路径"></a>推荐学习路径</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数学基础、Python基础、神经网络基础知识、Pytorch快速入门</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\downarrow<br>$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Baseline Paper</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\downarrow<br>$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">细分专题Paper</span><br></pre></td></tr></table></figure>
-
-<h2 id="如何学好计算机视觉论文"><a href="#如何学好计算机视觉论文" class="headerlink" title="如何学好计算机视觉论文"></a>如何学好计算机视觉论文</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数学：求导微分、概率论、线性代数</span><br><span class="line">编程：Python Pytorch</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\downarrow<br>$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">神经网络: MLP CNN RNN</span><br><span class="line">计算机基础知识：数据结构 图算法</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\downarrow<br>$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">神经网络专题：Node2vec LINE SDNE Metapath2vec TranSE GCN</span><br><span class="line">GAT：MPNN GGNN GraphSAGE</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\downarrow<br>$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CV-Baseline: word2vec Deepwalk</span><br></pre></td></tr></table></figure>
-
-<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>Python基础：</p>
-<ol>
-<li> 编程基础</li>
-<li> 机器学习库</li>
-</ol>
-<p>数学基础：</p>
-<ol>
-<li> 矩阵计算</li>
-<li> 概率论、信息论</li>
-</ol>
-<p>神经网络基础知识：</p>
-<p>一、神经网络与多层感知机</p>
-<ul>
-<li>人工神经元:MP模型</li>
-<li>多层感知机</li>
-<li>激活函数(sigmoid/ tanh/ relu)</li>
-<li>反向传播(BP):梯度下降、学习率</li>
-<li>损失函数</li>
-<li>权值初始化</li>
-<li>正则化：L1、L2和Dropout; 以及BN/ GN / IN/ LN</li>
-</ul>
-<p>二、卷积神经网络基础</p>
-<ul>
-<li>卷积神经网络简介</li>
-<li>卷积层</li>
-<li>池化层</li>
-<li>Lenet 5</li>
-</ul>
-<p>三、循环神经网络</p>
-<ul>
-<li>rnn循环神经网络</li>
-<li>lstm 长短记忆循环神经网络</li>
-<li>gru门控循环单元</li>
-</ul>
-<p>Pytorch入门：</p>
-<ul>
-<li>Pytorch简介及安装</li>
-<li>Pytorch数据读取模块</li>
-<li>Pytorch数据增强</li>
-<li>Pytorch Module模块</li>
-<li>Pytorch 常用网络层</li>
-<li>Pytorch 损失函数</li>
-<li>Pytorch 优化器 Optimizer</li>
-<li>Pytorch 可视化 TensorBoard</li>
-<li>Pytorch实用技巧</li>
-<li>GPU/Finetune/保存加载</li>
-</ul>
-<h2 id="Paper-list-GNN-Paper-list"><a href="#Paper-list-GNN-Paper-list" class="headerlink" title="Paper list (GNN Paper list)"></a>Paper list (GNN Paper list)</h2><ol>
-<li>Node2vec:平衡同质性和结构性</li>
-<li>LINE:一阶+2阶相似度</li>
-<li>SDNE:多层自编码器</li>
-<li>Metapath2vec:异质图网络</li>
-<li>TranSE:知识图谱奠基</li>
-<li>GCN:开山之作</li>
-<li>GAT:attention机制</li>
-<li>MPNN:空域卷积消息传递框架</li>
-<li>GGNN：门控图神经网络</li>
-<li>GraphSAGE:归纳式学习框架</li>
-</ol>
-<h4 id="Four-short-words-sum-up-what-lifted-most-successful-individuals-above-the-crowd-a-little-bit-more"><a href="#Four-short-words-sum-up-what-lifted-most-successful-individuals-above-the-crowd-a-little-bit-more" class="headerlink" title="Four short words sum up what lifted most successful individuals above the crowd: a little bit more."></a>Four short words sum up what lifted most successful individuals above the crowd: a little bit more.</h4>
-      
+            <span class="label">知乎</span>
+          </a>
+        </div>
     </div>
+  </div>
 
-    
-    
-    
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/Graph-neural-network-nodevec/" rel="tag"># Graph neural network, nodevec</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/05/13-43-40/" rel="prev" title="图神经网络专题导言">
+      <i class="fa fa-chevron-left"></i> 图神经网络专题导言
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -668,6 +553,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#node2vec-Scalable-Feature-Learning-for-Network"><span class="nav-number">1.</span> <span class="nav-text">node2vec: Scalable Feature Learning for Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text">论文结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87"><span class="nav-number">1.2.</span> <span class="nav-text">学习目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BE%E7%A8%8B%E5%AE%89%E6%8E%92"><span class="nav-number">1.3.</span> <span class="nav-text">课程安排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF%E3%80%81%E6%88%90%E6%9E%9C%E5%8F%8A%E6%84%8F%E4%B9%89"><span class="nav-number">1.4.</span> <span class="nav-text">论文研究背景、成果及意义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF%EF%BC%9A"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">研究背景：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%EF%BC%9A"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">数据集：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E6%88%90%E6%9E%9C%EF%BC%9A"><span class="nav-number">1.4.0.3.</span> <span class="nav-text">研究成果：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%88%90%E6%9E%9C%E4%B8%80%EF%BC%9A"><span class="nav-number">1.4.0.3.0.1.</span> <span class="nav-text">成果一：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%88%90%E6%9E%9C%E4%BA%8C%EF%BC%9A"><span class="nav-number">1.4.0.3.0.2.</span> <span class="nav-text">成果二：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link"><span class="nav-number">1.4.0.3.0.3.</span> <span class="nav-text"></span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E6%84%8F%E4%B9%89"><span class="nav-number">1.4.0.4.</span> <span class="nav-text">研究意义</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E6%B3%9B%E8%AF%BB"><span class="nav-number">1.5.</span> <span class="nav-text">论文泛读</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">摘要</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%91%98%E8%A6%81%E6%A0%B8%E5%BF%83%EF%BC%9A"><span class="nav-number">1.5.0.1.0.1.</span> <span class="nav-text">摘要核心：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E5%B0%8F%E6%A0%87%E9%A2%98"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">论文小标题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%9A%84%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">图的特征工程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB"><span class="nav-number">1.6.</span> <span class="nav-text">论文精读</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E6%A0%91"><span class="nav-number">1.6.0.1.</span> <span class="nav-text">知识树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9E%8B%E6%80%BB%E8%A7%88"><span class="nav-number">1.6.0.2.</span> <span class="nav-text">论文算法模型总览</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Node2vec%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E6%A0%91"><span class="nav-number">1.6.0.2.0.1.</span> <span class="nav-text">Node2vec结构知识树</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8"><span class="nav-number">1.6.0.2.0.2.</span> <span class="nav-text">图的存储</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Network-embedding%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87"><span class="nav-number">1.6.0.2.0.3.</span> <span class="nav-text">Network embedding学习目标</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%9B%BE%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.6.0.2.0.4.</span> <span class="nav-text">图的表示</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#bfs%E4%B8%8Edfs"><span class="nav-number">1.6.0.2.0.5.</span> <span class="nav-text">bfs与dfs</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Node2vec%E7%BB%93%E6%9E%84"><span class="nav-number">1.6.0.2.0.6.</span> <span class="nav-text">Node2vec结构</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9E%8B%E7%BB%86%E8%8A%822"><span class="nav-number">1.7.</span> <span class="nav-text">论文算法模型细节2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BFS%E7%AE%97%E6%B3%95"><span class="nav-number">1.7.0.1.</span> <span class="nav-text">BFS算法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Example"><span class="nav-number">1.7.0.1.0.1.</span> <span class="nav-text">Example</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DFS%E7%AE%97%E6%B3%95"><span class="nav-number">1.7.0.2.</span> <span class="nav-text">DFS算法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Example-1"><span class="nav-number">1.7.0.2.0.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B3%A8%EF%BC%9A%E6%AF%8F%E4%B8%AA%E7%82%B9%E9%82%BB%E5%B1%85%E6%80%8E%E4%B9%88%E5%8F%96%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%98%AF%E4%B8%8D%E7%A1%AE%E5%AE%9A%E7%9A%84"><span class="nav-number">1.7.0.2.0.2.</span> <span class="nav-text">注：每个点邻居怎么取的顺序是不确定的</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Random-walk"><span class="nav-number">1.8.</span> <span class="nav-text">Random walk</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

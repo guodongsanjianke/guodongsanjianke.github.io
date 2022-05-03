@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>00图神经网络专题01开课班</title>
+    <title>图神经网络专题导言</title>
     <url>/2022/01/05/13-43-40/</url>
-    <content><![CDATA[<h1 id="图神经网络开营仪式"><a href="#图神经网络开营仪式" class="headerlink" title="图神经网络开营仪式"></a>图神经网络开营仪式</h1><p>目录：</p>
-<ul>
+    <content><![CDATA[<h1 id="图神经网络导言"><a href="#图神经网络导言" class="headerlink" title="图神经网络导言"></a>图神经网络导言</h1><h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><ul>
 <li>为什么要学习图神经网络专题</li>
 <li>图神经网络专题技术演化路径</li>
 <li>发展历程与前进方向</li>
@@ -31,12 +30,227 @@
 <li>closeness</li>
 <li>pagerank</li>
 </ul>
-]]></content>
+<h2 id="推荐学习路径"><a href="#推荐学习路径" class="headerlink" title="推荐学习路径"></a>推荐学习路径</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数学基础、Python基础、神经网络基础知识、Pytorch快速入门</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\downarrow<br>$$</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Baseline Paper</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\downarrow<br>$$</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">细分专题Paper</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何学好计算机视觉论文"><a href="#如何学好计算机视觉论文" class="headerlink" title="如何学好计算机视觉论文"></a>如何学好计算机视觉论文</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数学：求导微分、概率论、线性代数</span><br><span class="line">编程：Python Pytorch</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\downarrow<br>$$</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">神经网络: MLP CNN RNN</span><br><span class="line">计算机基础知识：数据结构 图算法</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\downarrow<br>$$</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">神经网络专题：Node2vec LINE SDNE Metapath2vec TranSE GCN</span><br><span class="line">GAT：MPNN GGNN GraphSAGE</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\downarrow<br>$$</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CV-Baseline: word2vec Deepwalk</span><br></pre></td></tr></table></figure>
+
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>Python基础：</p>
+<ol>
+<li> 编程基础</li>
+<li> 机器学习库</li>
+</ol>
+<p>数学基础：</p>
+<ol>
+<li> 矩阵计算</li>
+<li> 概率论、信息论</li>
+</ol>
+<p>神经网络基础知识：</p>
+<p>一、神经网络与多层感知机</p>
+<ul>
+<li>人工神经元:MP模型</li>
+<li>多层感知机</li>
+<li>激活函数(sigmoid/ tanh/ relu)</li>
+<li>反向传播(BP):梯度下降、学习率</li>
+<li>损失函数</li>
+<li>权值初始化</li>
+<li>正则化：L1、L2和Dropout; 以及BN/ GN / IN/ LN</li>
+</ul>
+<p>二、卷积神经网络基础</p>
+<ul>
+<li>卷积神经网络简介</li>
+<li>卷积层</li>
+<li>池化层</li>
+<li>Lenet 5</li>
+</ul>
+<p>三、循环神经网络</p>
+<ul>
+<li>rnn循环神经网络</li>
+<li>lstm 长短记忆循环神经网络</li>
+<li>gru门控循环单元</li>
+</ul>
+<p>Pytorch入门：</p>
+<ul>
+<li>Pytorch简介及安装</li>
+<li>Pytorch数据读取模块</li>
+<li>Pytorch数据增强</li>
+<li>Pytorch Module模块</li>
+<li>Pytorch 常用网络层</li>
+<li>Pytorch 损失函数</li>
+<li>Pytorch 优化器 Optimizer</li>
+<li>Pytorch 可视化 TensorBoard</li>
+<li>Pytorch实用技巧</li>
+<li>GPU/Finetune/保存加载</li>
+</ul>
+<h2 id="Paper-list-GNN-Paper-list"><a href="#Paper-list-GNN-Paper-list" class="headerlink" title="Paper list (GNN Paper list)"></a>Paper list (GNN Paper list)</h2><ol>
+<li>Node2vec:平衡同质性和结构性</li>
+<li>LINE:一阶+2阶相似度</li>
+<li>SDNE:多层自编码器</li>
+<li>Metapath2vec:异质图网络</li>
+<li>TranSE:知识图谱奠基</li>
+<li>GCN:开山之作</li>
+<li>GAT:attention机制</li>
+<li>MPNN:空域卷积消息传递框架</li>
+<li>GGNN：门控图神经网络</li>
+<li>GraphSAGE:归纳式学习框架</li>
+</ol>
+<h4 id="Four-short-words-sum-up-what-lifted-most-successful-individuals-above-the-crowd-a-little-bit-more"><a href="#Four-short-words-sum-up-what-lifted-most-successful-individuals-above-the-crowd-a-little-bit-more" class="headerlink" title="Four short words sum up what lifted most successful individuals above the crowd: a little bit more."></a>Four short words sum up what lifted most successful individuals above the crowd: a little bit more.</h4>]]></content>
       <categories>
         <category>深度之眼</category>
       </categories>
       <tags>
         <tag>Graph neural network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>nodevec</title>
+    <url>/2022/01/07/10-54-05/</url>
+    <content><![CDATA[<h1 id="node2vec-Scalable-Feature-Learning-for-Network"><a href="#node2vec-Scalable-Feature-Learning-for-Network" class="headerlink" title="node2vec: Scalable Feature Learning for Network"></a>node2vec: Scalable Feature Learning for Network</h1><p><strong>node2vec:大规模网络节点的表征学习</strong></p>
+<p><strong>作者</strong>： Adiya Grover, Jure Lekovec</p>
+<p><strong>单位</strong>: Stanford</p>
+<p><strong>发表会议及时间</strong>：kdd, 2016</p>
+<p><strong>文章链接</strong>：<a href="https://cs.stanford.edu/people/jure/pubs/node2vec-kdd16.pdf">node2vec-kdd16.pdf (stanford.edu)</a></p>
+<p>这篇文章讲的是node2vec方法，参考的课程为深度之眼的图神经网络精讲班，链接如下：<a href="https://ai.deepshare.net/detail/p_5f69c3dbe4b0d59c87b78eb0/5">图神经网络精讲班 (deepshare.net)</a></p>
+<h2 id="论文结构"><a href="#论文结构" class="headerlink" title="论文结构"></a>论文结构</h2><ul>
+<li>摘要 Abstract: 介绍背景及提出node2vec模型，灵活可调的搜索策略</li>
+<li>Introduction: 介绍图的重要性，与以前的方法如PCA, ISOMAP, Deepwalk做对比</li>
+<li>Related work: 传统基于图的人工特征的算法，降维算法等</li>
+<li>Feature learning: 图的基本概念，skip-gram算法，优化目标函数</li>
+<li>Search strategies: BFS, DFS，搜索策略</li>
+<li>Node2vec: Biase random-walk算法，参数p, q的选取方法，时间复杂度分析，alias sampling</li>
+<li>Effectiveness: 实验探究模型有效性，Case study, baseline参数设定，分类任务和边预测任务</li>
+<li>Experiments: 实验探究鲁棒性，规模化</li>
+<li>Discussion: 总结提出来一种搜索可调的网络表征学习方法并提出了进一步的研究方向</li>
+</ul>
+<h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220107194603.png"></p>
+<h2 id="课程安排"><a href="#课程安排" class="headerlink" title="课程安排"></a>课程安排</h2><p>part1 论文导读，背景介绍</p>
+<p>part2 论文总览，图基础和优化函数</p>
+<p>part3 Node2vec具体算法讲解</p>
+<p>part4 案例分析及实验讨论</p>
+<p>part5 论文总结</p>
+<p>part6 代码实验分析</p>
+<p>接下来进入正题开始讲解</p>
+<h2 id="论文研究背景、成果及意义"><a href="#论文研究背景、成果及意义" class="headerlink" title="论文研究背景、成果及意义"></a>论文研究背景、成果及意义</h2><h4 id="研究背景："><a href="#研究背景：" class="headerlink" title="研究背景："></a>研究背景：</h4><p>图是一种描述复杂数据的模型，常见于计算机、社会科学、生物学、经济学、统计学等学科，比如社会科学中的人的迁徙，从一个地区迁徙到另一个地区可以建立一张图，生物学中的蛋白质之间建立关系；不过在研究图的时候，不同的人可能侧重点不同，比如有的人会从算法复杂度这个角度去研究，怎么降低计算时的算法复杂度。下面举几个常见的图网络：</p>
+<ul>
+<li><p>社交网络：朋友之间通过建立边，可以构成图</p>
+</li>
+<li><p>交通网络</p>
+</li>
+<li><p>网页之间的跳转</p>
+</li>
+<li><p>万维网：智能手机可以控制冰箱等，从而把不同设备相互连接起来</p>
+</li>
+</ul>
+<h4 id="数据集："><a href="#数据集：" class="headerlink" title="数据集："></a>数据集：</h4><p>在建立图时，我们需要一些数据，可以先在一些先去寻找一些常见的数据集，看看能不能进行训练，如果不行，可以进行爬虫收集数据。这里推荐一种数据集snap: stanford Large Network Dataset collection数据集。</p>
+<p>数据集链接：<a href="https://snap.stanford.edu/data/">Stanford Large Network Dataset Collection</a></p>
+<p>snap数据集是比较常见的一类数据集，是Jure等人不间断收集的网络数据集，极大地推动社会网络领域的发展。研究涵盖：节点分类(node classification)，边预测(link prediction)，社群检测(community detection)，网络营销(viral(病毒的) marketing), 网络相似度(network similaring)</p>
+<h4 id="研究成果："><a href="#研究成果：" class="headerlink" title="研究成果："></a>研究成果：</h4><h6 id="成果一："><a href="#成果一：" class="headerlink" title="成果一："></a>成果一：</h6><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220107203615.png" style="zoom:33%;" />
+
+<p>这一张图表示的是基于Les Miserables数据集的案例分析，数据集规模：n=77,m=254，n表示节点数量，m表示边的数量。</p>
+<p>上面的图表示的是同质性，是一种社群属性，可以看出离得比较近的点分成了一类，它是由DFS跑出来的结果。</p>
+<p>下面的图表示的是结构性，可以看出来属于同一类的点，结构具有一定的相似性，比如说蓝色的点，都起到了一个串联的结构作用，它是由BFS跑出来的。</p>
+<p>至于BFS,DFS表示什么，我们在后面的内容里面会将到。</p>
+<h6 id="成果二："><a href="#成果二：" class="headerlink" title="成果二："></a>成果二：</h6><h6 id=""><a href="#" class="headerlink" title=""></a><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220107204829.png" style="zoom:67%;" /></h6><p>实验结果与先前的一些方法比，达到了最好。</p>
+<p>这里详细介绍一下这个表格代表什么意思，Spectral Clustering是基于特征工程的谱分解，DeepWalk, LINE都是一些常见的算法，可以看出node2vec比前面三种方法达到的效果都好，下面的node2vec settings(p, q)中的p,q是node2vec算法中的一些参数，当p,q取表中的参数时，能达到node2vec在上表中的效果，Gain of node2vec表示的是与前面三种方法中最好的一种比，效果提高了多少。</p>
+<h4 id="研究意义"><a href="#研究意义" class="headerlink" title="研究意义"></a>研究意义</h4><p>node2vec意义：</p>
+<ul>
+<li>是Jure目前引用量最高的文章2800+</li>
+<li>与Deepwalk[2014]文章一样，属于早期网络表征学习的代表性工作，后期作为经典baseline</li>
+<li>启发了大量基于random walk来做网络表征学习的工作</li>
+</ul>
+<p>总之，Deepwalk，node2vec将图学习邻域: 人工特征提取 :arrow_right: 特征筛选 :arrow_right: 输入分类器, 转向深度学习邻域:特征工程和分类集成于一体</p>
+<h2 id="论文泛读"><a href="#论文泛读" class="headerlink" title="论文泛读"></a>论文泛读</h2><h4 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h4><h6 id="摘要核心："><a href="#摘要核心：" class="headerlink" title="摘要核心："></a>摘要核心：</h6><ol>
+<li>强调之前的基于特征工程工作的缺点，从而引出node2vec并探索邻域的多样性</li>
+<li>通过biased random walk 算法提出可调的搜索策略，生成不同语义的节点序列信息</li>
+<li>讨论算法的高效性，鲁棒性，从案例分析和大量实验论证模型的特点</li>
+<li>基于以上算法，node2vec算法在多个邻域的网络数据集上达到了当时的SOTA</li>
+</ol>
+<h4 id="论文小标题"><a href="#论文小标题" class="headerlink" title="论文小标题"></a>论文小标题</h4><p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220107212654.png"></p>
+<p>介绍一些图的基本概念：</p>
+<h4 id="图的特征工程"><a href="#图的特征工程" class="headerlink" title="图的特征工程"></a>图的特征工程</h4><p>Node centralities</p>
+<ul>
+<li>Degree(in/out)</li>
+<li>Betweeness</li>
+<li>clossness</li>
+<li>pagerank</li>
+</ul>
+<h2 id="论文精读"><a href="#论文精读" class="headerlink" title="论文精读"></a>论文精读</h2><h4 id="知识树"><a href="#知识树" class="headerlink" title="知识树"></a>知识树</h4><p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220110154554.png"></p>
+<h4 id="论文算法模型总览"><a href="#论文算法模型总览" class="headerlink" title="论文算法模型总览"></a>论文算法模型总览</h4><h6 id="Node2vec结构知识树"><a href="#Node2vec结构知识树" class="headerlink" title="Node2vec结构知识树"></a>Node2vec结构知识树</h6><p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220110154852.png"></p>
+<h6 id="图的存储"><a href="#图的存储" class="headerlink" title="图的存储"></a>图的存储</h6><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220110155530.png#" style="zoom:50%;" />
+
+<p>图的存储一般有两种方式：邻接矩阵和邻接表，邻接表的存储复杂度是：$O(m)$，$m$表示的边数。</p>
+<h6 id="Network-embedding学习目标"><a href="#Network-embedding学习目标" class="headerlink" title="Network embedding学习目标"></a>Network embedding学习目标</h6><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220110160121.png#" style="zoom:50%;" />
+
+
+
+<p>图神经网络的最终目的是学到节点的表征，比如给一张图，$u$是图中的一个节点，神经网络最终的目标是学习到这个节点的embedding，变成一个更低维$d$维向量。</p>
+<h6 id="图的表示"><a href="#图的表示" class="headerlink" title="图的表示"></a>图的表示</h6><p>给定一张图$G=(V,E)$，目标是学习映射$f:u \rightarrow \mathbb{R}^d$，使得<br>$$<br>\max <em>{f} \sum</em>{u \in V} \log \operatorname{Pr}\left(N_{S}(u) \mid f(u)\right)<br>$$<br>其中$N_{S}(u)$为节点$u$的邻居，即给定一个节点使得其近邻节点出现的概率最大</p>
+<h6 id="bfs与dfs"><a href="#bfs与dfs" class="headerlink" title="bfs与dfs"></a>bfs与dfs</h6><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220110162100.png" style="zoom:50%;" />
+
+<p>BFS表示的是往这个节点的周围去搜索，DFS表示的是往深的地方去搜索</p>
+<img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220110162320.png" style="zoom:67%;" />
+
+<p>红色的表示BFS的搜索路径，蓝色的箭头表示的是DFS的搜索特征。</p>
+<p>BFS: local microscopic view</p>
+<p>DFS: global macroscopic view</p>
+<h6 id="Node2vec结构"><a href="#Node2vec结构" class="headerlink" title="Node2vec结构"></a>Node2vec结构</h6><p>优化目标：给定一个顶点，令其邻近顶点出现的概率最大<br>$$<br>\max <em>{f} \sum</em>{u \in V} \log \operatorname{Pr}\left(N_{S}(u) \mid f(u)\right)<br>$$<br>为了使上述公式能够得到很好的优化求解，提出了两个假设：</p>
+<ol>
+<li><p>条件独立</p>
+<p>给定一个顶点，其近邻节点出现的概率与其近邻集合中的其他节点无关，得到如下公式：<br>$$<br>\operatorname{Pr}\left(N_{s}(u) \mid f(u)\right)=\prod_{n \in N_{s}(u)} \operatorname{Pr}\left(n_{i} \mid f(u)\right)<br>$$</p>
+</li>
+<li><p>特征空间的对称性</p>
+<p>源顶点和近邻顶点在特征空间中具有对称性，不管是源顶点还是近邻点Embedding表达式是一样的，得到下面公式:</p>
+</li>
+</ol>
+<p>$$<br>\operatorname{Pr}\left(n_{i} \mid f(u)\right)=\frac{\exp \left(f\left(n_{i}\right) \cdot f(u)\right)}{\sum_{v \in V} \exp (f(v) \cdot f(u))}<br>$$</p>
+<p>根据以上两个假设，最终的目标函数简化为：</p>
+<p>$$<br>\max <em>{f} \sum</em>{u \in v}\left[-\log Z_{u}+\sum_{n_{i} \in N_{s}(u)} f\left(n_{i}\right) \cdot f(u)\right]<br>$$<br>其中<br>$$<br>Z_{u}=\sum_{v \in V} \exp \left(f\left(n_{i}\right)\right)<br>$$</p>
+<h2 id="论文算法模型细节2"><a href="#论文算法模型细节2" class="headerlink" title="论文算法模型细节2"></a>论文算法模型细节2</h2><h4 id="BFS算法"><a href="#BFS算法" class="headerlink" title="BFS算法"></a>BFS算法</h4><p>数据结构：queue</p>
+<p>FIFD (first in first out)先进先出</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">iter_bfs</span>(<span class="params">G, s, S=<span class="literal">None</span></span>):</span></span><br><span class="line">    S, Q = <span class="built_in">set</span>(), deque()</span><br><span class="line">    Q.append(s)</span><br><span class="line">    <span class="keyword">while</span> Q:</span><br><span class="line">        u = Q.popleft()</span><br><span class="line">        <span class="keyword">if</span> u <span class="keyword">in</span> S: <span class="keyword">continue</span></span><br><span class="line">            s.add(u)</span><br><span class="line">            Q.extent(G[u])</span><br><span class="line">            <span class="keyword">yield</span> u</span><br></pre></td></tr></table></figure>
+
+<h6 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h6><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220113145633.png" style="zoom:50%;" />
+
+<p>比如这一张图，先访问A，A的邻居有B,C,D，把B取出来，B有邻居A，已经访问过了，这时还有C,D</p>
+<p>把C取出来，C的邻居有E,F，把C的邻居放进去，此时队列里面有D,E,F</p>
+<p>把D取出来，D的邻居有F（A已经访问过了），已经在队列里面了此时队列里面只剩E, F</p>
+<p>把E取出来，E没有要取出的邻居(C已经访问过了)，此时队列里面有F</p>
+<p>把F取出来，F没有要取出的邻居</p>
+<p>所以最后的顺序是：ABCDEF</p>
+<h4 id="DFS算法"><a href="#DFS算法" class="headerlink" title="DFS算法"></a>DFS算法</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">iter_dfs</span>(<span class="params">G, s</span>):</span></span><br><span class="line">    S, Q = <span class="built_in">set</span>(), []</span><br><span class="line">    Q.append(s)</span><br><span class="line">    <span class="keyword">while</span> Q:</span><br><span class="line">        u = Q.pop()</span><br><span class="line">        <span class="keyword">if</span> u <span class="keyword">in</span> S: <span class="keyword">continue</span></span><br><span class="line">            S.add(u)</span><br><span class="line">            Q.extend(G[u])</span><br><span class="line">            <span class="keyword">yield</span> u</span><br></pre></td></tr></table></figure>
+
+<h6 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h6><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20220113145633.png" style="zoom:50%;" />
+
+<p>还是刚才那张图</p>
+<p>还是从A出发，A的邻居为B, C, D</p>
+<p>先把D取出来， D的邻居为F,把D的邻居放进去，此时队列里面有B,C,F</p>
+<p>把F取出来，F没有可以取出的邻居（C,D都在队列里），此时队列里面有B,C</p>
+<p>把C取出来，C可以取出的邻居是E,此时队列里面有B,E</p>
+<p>把E从队列里面取出来， E没有可以取出的邻居，此时队列里面只剩B</p>
+<p>把B从队列里面取出来，B没有可以取出的邻居，结束</p>
+<p>所以最后的顺序为A,D,F,C,E,B</p>
+<h6 id="注：每个点邻居怎么取的顺序是不确定的"><a href="#注：每个点邻居怎么取的顺序是不确定的" class="headerlink" title="注：每个点邻居怎么取的顺序是不确定的"></a>注：每个点邻居怎么取的顺序是不确定的</h6><h2 id="Random-walk"><a href="#Random-walk" class="headerlink" title="Random walk"></a>Random walk</h2><p>论文核心：传统的random walk 不具备探索节点不同类型领域的能力</p>
+<p>认为网络同时具备节点和同质相似性</p>
+]]></content>
+      <categories>
+        <category>深度之眼</category>
+      </categories>
+      <tags>
+        <tag>Graph neural network, nodevec</tag>
       </tags>
   </entry>
 </search>
