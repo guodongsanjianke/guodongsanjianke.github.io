@@ -332,6 +332,361 @@ F=\nabla \cdot T^{e} ; \quad T_{i j}{ }^{e}=\epsilon E_{i} E_{j}-\frac{1}{2} \ep
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
+            <a href="/2022/01/05/13-43-40/" class="post-title-link" itemprop="url">图神经网络解偏微分方程系列（一）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-05 13:43:40" itemprop="dateCreated datePublished" datetime="2022-01-05T13:43:40+08:00">2022-01-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-14 11:30:52" itemprop="dateModified" datetime="2022-09-14T11:30:52+08:00">2022-09-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/01/05/13-43-40/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/01/05/13-43-40/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>12k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>11 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="图神经网络解偏微分方程系列一">图神经网络解偏微分方程系列（一）</h1>
+<h2 id="标题和概述">1. 标题和概述</h2>
+<h3 id="learning-continuous-time-pdes-from-sparse稀疏-data-with-graph-neural-networks">Learning continuous-time PDEs from sparse(稀疏) data with graph neural networks</h3>
+<h4 id="使用图神经网络从稀疏数据中学习连续时间偏微分方程"><font color=red> 使用图神经网络从稀疏数据中学习连续时间偏微分方程</font></h4>
+<p>这篇文章是使用图神经网络从稀疏数据中学习连续时间偏微分方程，发表在ICLR，ICLR是深度学习的顶级会议。</p>
+<p>文章提出的模型主要创新点是<strong>允许任意空间和时间离散化</strong>，也就是说在求解偏微分划分网格时，网格可以是不均匀的，由于所求解的控制方程是未知的，在表示控制方程时，作者使用了消息传递的图神经网络进行参数化。与之前的基于机器学习的PDE方法（数据驱动）比较：PINN虽然求得的方程的解，在时间上是连续的，但是它求的方程是已知的，并且在空间邻域和边界条件都不是自由的。PDE-Net虽然需要学习的方程是未知的，但是求得的解不是连续时间的，在空间邻域和边界条件都不是自由的。这篇文章提出的方法能同时保证通过数据学习未知的偏微分方程，解在时间上是连续的，并且空间邻域和边界条件都是自由的。</p>
+<p>文章所用的模型是基于直线法，把偏微分方程化成常微分方程组，常微分方程组右边的项用消息传递的图神经网络来表示，在构造图结构时，进行了Delaunay三角剖分，Delaunay三角剖分具有空圆特性和使每个三角形最小角度最大化。</p>
+<h2 id="文章链接">2. 文章链接</h2>
+<p><a target="_blank" rel="noopener" href="http://arxiv.org/abs/2006.08956" title="Learning continuous-time PDEs from sparse(稀疏) data with graph neural networks">Learning continuous-time PDEs from sparse data with graph neural networks</a></p>
+<h2 id="作者">3. 作者</h2>
+<p><strong><font color="blue">Valerii Iakovlev, Markus Heinonen &amp; Harri Lahdesmaki</font></strong></p>
+<h2 id="出版杂志及日期">4. 出版杂志及日期</h2>
+<p><strong><font color="oran">Published as a conference paper at ICLR 2021</font></strong></p>
+<h2 id="摘要">5. 摘要</h2>
+<p>许多动力系统的行为遵循复杂的，但仍然未知的偏微分方程。虽然已经提出了几种机器学习方法来直接从数据中学习偏微分方程，但以前的方法仅限于离散时间近似，或者使观测到达规则网格的有限假设。我们提出了一种广义连续时间微分动力学模型，<strong>该模型的控制方程是通过消息传递的图神经网络参数化的</strong>。该模型允许任意的空间和时间离散化，消除了对观测点位置和观测间隔的限制。模型采用连续<strong>时间伴随方法(continuous-time adjoint method)</strong>进行训练，实现了高效的神经PDE推理。我们展示了该模型处理非结构化网格、任意时间步长和噪声观测的能力。我们将我们的方法与一些知名物理系统的现有方法进行了比较，这些物理系统包括一阶和高阶偏微分方程，具有最先进的预测性能。</p>
+<h2 id="总结">6. 总结</h2>
+<p>我们提出了一个<strong>动力系统的连续时间模型</strong>，其行为受偏微分方程控制。该模型能准确地恢复系统的动态，即使观测点稀疏且记录的时间间隔不规律。与离散时间模型的比较揭示了连续时间模型对于<strong>观测之间时间间隔较大的数据集的优势</strong>，这在实际应用中是典型的，因为在实际应用中，测量可能是乏味的或昂贵的，或两者兼有。用<strong>直线法(method of lines)</strong>离散坐标域提供了一个通用的建模框架，在该框架中，可以使用任意的替代函数来逼近<span class="math inline">\(\hat{F}\)</span>。该模型的连续时间特性使得从欧拉方法(Euler method)到高度精确的自适应方法(adaptive methods)的各种时间积分器(time integrators)得以使用。这允许根据数据的结构优化代理函数(surrogate function)和时间集成方案(time integration scheme)的选择。</p>
+<h2 id="贡献">7. 贡献</h2>
+<p>在本文中，我们从稀疏数据出发提出了学习一个自由形式、连续时间、先验完全未知的PDE模型F，稀疏数据被测量使用图神经网络在坐标邻域<span class="math inline">\(\Omega\)</span>的任意时间点和位置上。我们的贡献是：</p>
+<ul>
+<li>我们引进了<strong>PDE驱动系统(PDE-driven systems)</strong>的连续时间表示和学习</li>
+<li>我们提出了使用带<strong>消息传递神经网络(message passing neural networks)的直线方法(method of lines)</strong>来有效的表示<strong>域结构(domain structure)的图</strong></li>
+<li>我们在具有<strong>不规则数据的真实PDE系统</strong>上取得了最先进的学习性能，并且我们的模型对数据稀疏性具有高度的<strong>鲁棒性</strong></li>
+</ul>
+<p>可以在这个<a target="_blank" rel="noopener" href="https://github.com/yakovlev31/graphpdes_experiments">github储存库</a>中找到用于复制实验的脚本和数据。</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211013162511.png" /></p>
+<center>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">
+<b>表1：基于机器学习的PDE学习方法比较</b>
+</div>
+<pre><code>&lt;br&gt;&lt;/center&gt;</code></pre>
+<h2 id="实验">8. 实验</h2>
+<p>我们评估我们的模型在学习已知物理系统动力学方面的表现。我们比较了最先进的可竞争的方法，并开始进行消融研究(ablation studies)以衡量我们模型的性能如何依赖于测量<strong>网格大小</strong>、<strong>观测间隔</strong>、<strong>不规则采样</strong>、<strong>数据量</strong>和<strong>噪声量</strong>。</p>
+<h3 id="对流扩散消融研究convection-diffusion-ablation-studies">8.1 对流扩散消融研究(convection-diffusion ablation studies)</h3>
+<p>对流扩散方程是一个偏微分方程，可以用来模拟与物理系统中粒子、能量和其他物理量的传递有关的各种物理现象。这种转移是由对流和扩散两个过程引起的。对流-扩散方程的定义为</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211011215738.png#" style="zoom:50%;" /></p>
+<p>其中<span class="math inline">\(u\)</span>是一些兴趣量的集中(the concentration of some quantity of interest)，利用观测状态<span class="math inline">\(y(t_{i})\)</span>和估计状态<span class="math inline">\(\hat{u}\left(t_{i}\right)\)</span>之间的相对误差来评估模型的预测质量：</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012101342.png" style="zoom:50%;" /></p>
+<p>在接下来的所有实验中，除非另有说明，训练数据包含时间间隔[0,0.2]秒的24个模拟，测试数据包含时间间隔[0,0.6]秒的50个模拟。从高保真仿真中随机下采样数据，因此所有的训练和测试仿真都有不同节点位置，而节点数量保持不变。图14显示了来自训练和测试集的示例，</p>
+<p><strong>不同网格大小。</strong> 这个实验测试了我们的模型从观测点不同密度的数据学习能力。时间步长被设置为0.02秒，导致每个模型有11个训练时间点。观测点<span class="math inline">\(x_{i}\)</span>​的数目(和GNN中的节点)被设置为3000，1500，750。结果网格显示在图2b的第一列中。图2显示了相关的测试误差和模型的预测。</p>
+<p>模型的性能随着网格中节点数目减少而降低。尽管如此，即使使用最小的网格，模型也能够学习到一个合理准确的系统动力学近似，并在训练时间间隔之外进行推广。</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211014110011.png" style="zoom:67%;" /></p>
+<center>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+<b>图2: a) 不同网格尺寸的相对测试误差。 b)真实和学习系统动力学可视化(网格显示在第一列)</b>
+</div>
+<br>
+</center>
+<p><strong>不同的测试时间间隔。</strong> 如下面的实验所示，具有常数时间步长的模型对观测间隔的长度是敏感的。当时间步长较小时，该模型表现出良好的性能，但是当时间步长增大时，该模型无法推广。这个实验显示了我们的模型在观测时间间隔相对较长的情况下从数据中学习的能力。</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012104001.png" /></p>
+<center>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+<b>图3: a) 不同时间网格的相对测试误差。 b)真实和学习系统动力学可视化(网格显示在第一列)</b>
+</div>
+<br>
+</center>
+<p>我们使用11、4和2个均匀的时间点进行训练。节点的设置为3000。图3显示了相对测试误差和模型的预测。该模型能恢复系统的连续时间动力学，即使在每个仿真中用四个时间点训练。增加观察频率并不会显著提高性能。图中显示了一个带有四个时间点的训练模型示意。</p>
+<p><strong>不规则的时间步长。</strong> 用于训练的观察结果可能不是用固定的时间步长记录的。这可能会给基于这种假设构建的模型带来麻烦。这个实验测试了我们模型在随机时间点学习被观测到数据的能力。</p>
+<p>模型在两个时间网格上训练。第一个网格具有恒定的时间步长0.02秒。第二个网格与第一个网格相同，但每个时间点都受到噪声的干扰<span class="math inline">\(\varepsilon \sim N\left(0,\left(\frac{0.02}{6}\right)^{2}\right)\)</span>。这给出了一个不规则时间步长设置0.01秒。节点数目设置为3000。相对测设误差如图4所示，在这两种情况下，模型实现了相似的性能。这证明了我们模型的连续时间特性，因为训练和预测不像大多数其他方法那样局限于均匀间隔的时间网格。没有一个以前的方法学习自由形式(即参数化神经网络)的PDE可以使用随时间不规则采样的数据进行训练。</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012111737.png#" style="zoom:67%;" /></p>
+<center>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+<b>图4：规则和不规则时间网格的相对测试误差</b>
+</div>
+<br>
+</center>
+<p><strong>不同的数据量</strong>。 在本实验中，对模型进行了1，5，10，24次模拟训练。测试数据包含50个模拟。节点数目设置为3000。相对测试误差如图5所示。模型的性能随着训练数据量的增加而提高。值得注意的是，<strong>尽管使用了更多的数据，相对误差并不收敛到零。</strong></p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012123433.png#" style="zoom:67%;" /></p>
+<center>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+<b>图5:不同数量训练数据的相对测试误差</b>
+</div>
+<br>
+</center>
+<p><strong>不同数量的附加噪声。</strong> 我们应用附加噪声<span class="math inline">\(\varepsilon \sim N(0, \sigma^{2})\)</span>训练数据，其中<span class="math inline">\(\sigma\)</span>设置为0.02和0.04，而观测状态的最大量值为1。时间步长设置为0.01秒。节点数设置为3000。噪声只添加到训练数据中。相关测设误差如图6所示。模型的性能随着<span class="math inline">\(\sigma\)</span>的增大而降低，但<span class="math inline">\(\sigma=0.04\)</span>时模型仍保持较高的性能。</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012130934.png" style="zoom:67%;" /></p>
+<center>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+<b>图6:训练数据中不同噪声量的相对测试误差</b>
+</div>
+<br>
+</center>
+<h3 id="基准方法比较banchmark-method-conparison">8.2 基准方法比较(Banchmark method conparison)</h3>
+<p>将本文提出的方法与文献中提出的两个模型进行比较：PDE-Net (<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Long et al., 2017</a>)和DPGN(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Seo &amp; LIu, 2019a</a>)。PDE-Net是基于<strong>卷积神经网络</strong>，采用类似欧拉方法的不变时间步长方案(constant time-stepping scheme)。DPGN是基于<strong>图神经网络</strong>，实现了时间步长作为潜在空间的进化图(an evolution map in the latent space)。</p>
+<p>我们使用(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">long et al., 2017</a>)等人提供的PDE-Net实现，除此之外，我们传递滤波值(filter value)通过一个MLP(多层感知机)，MLP被组成由2个隐藏层，每层60个神经元，非线性激活函数为tanh，这有助于提高模型的稳定性和性能。我们使用无矩约束(without moment constraints)<span class="math inline">\(5 \times 5\)</span>和<span class="math inline">\(3 \times 3\)</span>的滤波器，最大偏微分方程的阶数分别为4和2。$ t-blocks<span class="math inline">\(的数量设置为训练数据中的时间步长。我们对DPGN的实现遵循从([Seo &amp; Liu, 2019][2])其潜扩散系数(latent diffusivity)\)</span>$。所有模型的参数数接近20K。</p>
+<p>训练数据包含24个模拟在时间间隔[0,0.2]秒，遵循的时间步长如下：0.01，0.02和0.04。测试数据包含50个在时间间隔[0,0.6]秒上的模拟，遵循的时间步长相同。由于PDE-Net不能应用于任意的空间网格，数据生成在<span class="math inline">\(50 \times 50\)</span>的规则网格上。每个时间步数分别训练不同的模型。模型的性能是用<strong>相对测试误差随时间平均的平均值</strong>来评估的。</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012134303.png" style="zoom:67%;" /></p>
+<center>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+<b>图7:不同时间步长训练模型的平均相对误差</b>
+</div>
+<br>
+</center>
+<p>模型的平均相对测试误差如图7所示。由图可知离散时间模型的性能对时间步长具有很强的依赖性，而连续时间模型的性能能保持在同一水平。在最小的时间步长下，PDE-Net <span class="math inline">\(5 \times 5\)</span>滤波器的性能优于其他模型，这是因为PDE-Net能够访问更大的节点领域，使得模型能够做出更准确的预测。然而，较大的滤波器尺寸不能提高稳定性。</p>
+<p>我们注意到一些离散时间模型，例如，DPGN，可以修改为将时间步长作为其输入。与这种类型的模型进行比较是多余的，因为图7已经演示了这种模型的最佳情况下的性能(当使用恒定时间步长进行训练和测试时)。</p>
+<p><strong>相对位置信息的重要性</strong>。我们在不同节点数量的网格上使用或不使用<strong>相对节点位置</strong>（relative node position）作为<strong>边缘特征编码</strong>(encoded as the edge features)的MPNN来测试模型。节点数量越少，相邻节点之间的距离变化(distance variability)越高(图12)，这应该会增加模型精度对相对空间信息的依赖。通过从模型中删除空间信息，我们恢复了GNODE。模型在热量和对流扩散方程上进行了测试。实验的完整描述在附录D中，结果如图8所示。</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012162308.png#" style="zoom:65%;" /></p>
+<center>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+<b>图8:有和没有相对节点位置的模型的平均相对测试误差</b>
+</div>
+<br>
+</center>
+<p>令人惊讶的是，GNODE在纯扩散热方程上显示了良好的结果。尽管如此，GNODE显著的性能明显不同于我们的模型，包括空间信息。而且，当节点数量从100%减少到50%时，性能差异几乎翻倍。</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012164120.png" style="zoom:67%;" /></p>
+<center>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+<b> 图9:a) 热方程的相对测试误差 b)真实和学习的系统动力学</b>
+</div>
+<br>
+</center>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012164322.png" style="zoom:67%;" /></p>
+<center>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+<b> 图10:a) Burgers方程的相对测试误差 b)真实和学习的系统动力学</b>
+</div>
+<br>
+</center>
+<p>当将GNODE应用于对流扩散方程时，无论节点数量如何，GNODE都无法学习动力学。这可以用对流项的存在来解释，对流项将场向特定方向输送，因此，位置信息对于准确预测场的变化尤为重要。</p>
+<h3 id="其他动力系统other-dynamical-systems">8.3 其他动力系统(other dynamical systems)</h3>
+<p>该模型在另外两个动力系统上进行了测试，以评估其处理更广泛问题的能力。为此，我们选择了热方程(heat equation)和Burgers' 方程。热方程是最简单的偏微分方程之一，而由于非线性对流项的存在，Burgers方法比对流扩散方程更为复杂。随着问题难度的增加，我们可以在保持模型参数数量不变的情况下，跟踪从简单到复杂的动态过程中模型性能的变化。</p>
+<p><strong>热方程。</strong> 热方程描述了扩散系统的行为。方程定义为<span class="math inline">\(\frac{\partial u}{\partial t}=D \nabla^{2} u\)</span>，其中u为温度场。图9显示了一个随机测试情况的相对误差和模型预测。热方程比对流扩散方程描述的动力学更简单，这使得模型可以获得略小的测试误差。</p>
+<p><strong>Burgers' 方程。</strong> Burgers方程是由两个耦合的非线性方程组(coupled nonlinear PDEs)组成的方程组。它描述了具有非线性传播效应(nonlinear propagation effects)的耗散系统(dissipative systems)的行为。方程定义为<span class="math inline">\(\frac{\partial u(x,y,t) }{\partial t}=D \nabla^{2}u(x,y,t)-u(x,y,t) \cdot \nabla u(x,y,t)\)</span>，其中<span class="math inline">\(u\)</span>是速度向量场。为了可视化误差和测量的目的，速度向量场被转换为由每个节点的的速度大小定义的标量场。图10显示了一个随机测试例子的相对误差和模型预测。</p>
+<p>Burgers' 方程 描述的动力学比前两种情况更复杂，反映在较高的相对测试误差。真实状态和预测状态的视觉对比表明，该模型能够在逼近未知动态时达到足够的精度。</p>
+<h2 id="方法">9 方法</h2>
+<p>在本节中，我们考虑从观测中学习未知函数<span class="math inline">\(F\)</span>的问题，从系统状态<span class="math inline">\(u(t)=(u(x_{1},t),...,u(x_{N},t))\)</span>的观测<span class="math inline">\((y(t_{0}),...,y(t_{M})) \in \mathbb{R}^{N \times (M+1)}\)</span>在<span class="math inline">\(N\)</span>个任意空间位置<span class="math inline">\((x_1,...x_N)\)</span>，<span class="math inline">\(M+1\)</span>个时间点<span class="math inline">\((t_0,...t_M)\)</span>。我们引入有效的<strong>图卷积神经网络</strong>替代在连续时间从稀疏数据学习偏微分方程。注意，当我们考虑任意采样的空间位置和时间点时，我们不考虑部分观测向量<span class="math inline">\(y(t_i)\)</span>的情况，即在某个位置的数据在某个时间点丢失。然而，在计算损失时，部分观测向量可以通过掩盖观测缺失的节点来计算。假设函数<span class="math inline">\(F\)</span>不依赖于空间坐标的全局值(global values of the spatial coordinates)，即假设系统不包含位置相关的场(position-dependent fields)。</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012212246.png" style="zoom:50%;" /></p>
+<p>我们采用直线法(method of lines, MOL) (<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Schiesser, 2012</a>)对式1进行数值计算。MOL包括在<span class="math inline">\(\Omega\)</span>中选择<span class="math inline">\(N\)</span>个节点，并在这些节点上离散<span class="math inline">\(F\)</span>的空间导数。我们将节点放置到观测位置<span class="math inline">\((x_1,...,x_N)\)</span>。离散化导致<span class="math inline">\(F\)</span>被<span class="math inline">\(\hat{F}\)</span>近似，并产生下列常微分方程组(ODE)，其解渐近地近似于方程1的解</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012213222.png" style="zoom:65%;" /></p>
+<p>由于离散化的<span class="math inline">\(\hat{F}\)</span>从从真实的PDE函数<span class="math inline">\(F\)</span>继承了它的未知性质，我们用一个可学习的神经网络替代函数来近似<span class="math inline">\(\hat{F}\)</span>。</p>
+<p>系统在<span class="math inline">\(x_i\)</span>处的状态被定义为<span class="math inline">\(u_i\)</span>，而<span class="math inline">\(N(i)\)</span>是一组除了<span class="math inline">\(i\)</span>的相邻节点的指标，这些指标要求<span class="math inline">\(\hat{F}\)</span>在<span class="math inline">\(x_i\)</span>处求值，<span class="math inline">\(x_{N(i)}\)</span>和<span class="math inline">\(u_{N(i)}\)</span>是节点<span class="math inline">\(N(i)\)</span>的位置和状态。由此可见，<span class="math inline">\(u_{i}\)</span>的时间倒数<span class="math inline">\(\dot{u}_{i}\)</span>不仅于节点的位置和状态有关，而且还与相邻节点的位置和状态有关，从而形成一个局部耦合的ODE系统</p>
+<p>系统中的每个ODE都遵循一个固定位置<span class="math inline">\(x_i\)</span>的解。已经提出了许多ODE求解器(如Euler和Runge-Kutta求解器)来求解整个系统</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012215531.png" style="zoom:50%;" /></p>
+<p>其中<span class="math inline">\(0 \leq \tau \leq t\)</span>是一个积累的中间时间变量。在时间尺度上线性地向前求解方程3关于节点数<span class="math inline">\(N\)</span>和评估时间点的数量<span class="math inline">\(M\)</span>，而饱和输入空间(saturating the input sapce) <span class="math inline">\(\omega\)</span>需要大量节点。在实际应用中，偏微分方程通常应用于二维和三维空间系统中，这种方法是有效的。</p>
+<h3 id="位置不变的图神经网络微分">9.1 位置不变的图神经网络微分</h3>
+<p>在引入方程2之后，我们从学习<span class="math inline">\(F\)</span>过渡到学习<span class="math inline">\(\hat{F}\)</span>。<span class="math inline">\(\hat{F}\)</span>在节点<span class="math inline">\(i\)</span>处的值必须仅依赖于节点<span class="math inline">\(i\)</span>和<span class="math inline">\(N(i)\)</span>。此外，<span class="math inline">\(\hat{F}\)</span>的参数数量和它们的顺序是事先不知道的，对于每个节点可能是不同的。这意味着我们的模型<span class="math inline">\(\hat{F}\)</span>必须能够处理任意数量的参数，并且必须对它们的顺序不变。图神经网络(GNNs)(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Wu et al., 2020</a>)满足这些要求。在一个更受限的设置中，邻居的数量和它们的顺序是已知的(例如，如果网格是均匀的)，其他类型的模型，例如多层感知机和卷积神经网络也可以使用。</p>
+<p>我们考虑一种图神经网络称为消息传递神经网络(message passing neural networks, MPNNs) (<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Gilmer et al., 2017</a>)，将<span class="math inline">\(\hat{F}\)</span>表示为</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012221854.png" style="zoom:50%;" /></p>
+<p>其中</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012222312.png" style="zoom:50%;" /></p>
+<p><span class="math inline">\(\theta\)</span>表示MPNN的参数。</p>
+<p>该公式假设<span class="math inline">\(\hat{F}\)</span>中没有位置相关的量，但基于该公式的模型对<span class="math inline">\(\Omega\)</span>的平移和旋转不变，这使得对具有不同节点位置的系统的推广是可行的，并通过记忆特定位置的动力学(memorizing position-specific dynamic)防止过拟合。</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012223040.png" style="zoom:50%;" /></p>
+<center>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+<b> 图1一组点的Delaunay三角剖分。绿色和橙色点被认为是邻居，因为它们共享同一条边</b>
+</div>
+<br>
+</center>
+<h3 id="消息传递神经网络">9.2 消息传递神经网络</h3>
+<p>在消息传递图神经网络中，我们传播<span class="math inline">\(K \geq 1\)</span>个图层的潜在状态(latent state)，其中每一层<span class="math inline">\(K\)</span>首先由每个节点<span class="math inline">\(i\)</span>的聚合消息<span class="math inline">\(m_{i}^{(k)}\)</span>组成，然后更新相应的节点状态<span class="math inline">\(h_{i}^{(k)}\)</span></p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211013104834.png" style="zoom:50%;" /></p>
+<p>其中<span class="math inline">\(\oplus\)</span>表示置换不变的聚合函数(如sum,mean,max)，<span class="math inline">\(\phi^{k}\)</span>，<span class="math inline">\(\gamma^{k}\)</span>是由神经网络参数化的可微函数。在任何时间<span class="math inline">\(\tau\)</span>，我们初始化潜在状态<span class="math inline">\(h_i^{0}=v_i=u_i(\tau)\)</span>和节点特征到当前系统的状态<span class="math inline">\(u_i(\tau)\)</span>。我们定义边缘特征<span class="math inline">\(e_{ij}:=x_j-x_i\)</span>为位置差异。最后，我们使用MPNN图层(graph layer of the MPNN)的最后一个节点状态来评估PDE替代函数(PDE surrogate)。</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211013110317.png" style="zoom:50%;" /></p>
+<p>用于求解方程3的估计状态<img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211013110601.png" style="zoom:50%;" /></p>
+<h3 id="学习连续时间mpnn替代的伴随方法adjoint-method">9.3 学习连续时间MPNN替代的伴随方法（adjoint method）</h3>
+<p><span class="math inline">\(\hat{F_\theta}\)</span>的参数由<span class="math inline">\(\theta\)</span>定义，<span class="math inline">\(\theta\)</span>是函数<span class="math inline">\(\phi^{(k)}\)</span>，<span class="math inline">\(\gamma^{(k)}\)</span>的参数联合(the union of parameters)，<span class="math inline">\(k=1,...,K\)</span>在MPNN中。我们通过最小化观测状态<span class="math inline">\((y(t_{0}),...,y(t_{M}))\)</span> 和估计状态<span class="math inline">\((\hat{u}(t_{0}),...,\hat{u}(t_{M}))\)</span> 间的均方误差来拟合<span class="math inline">\(\theta\)</span></p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211013111730.png" style="zoom:50%;" /></p>
+<p>虽然离散时间神经PDE模型仅在测量时间点评估系统状态，但对于估计状态的更精确的连续时间解通常需要更多的系统状态评估。如果使用自适应求解器(adaptive solver)来获得估计的状态，求解器执行的时间步长数量可能显著大于<span class="math inline">\(M\)</span>。<strong>通过反向传播来评估<span class="math inline">\(\mathcal{L}(\theta)\)</span>的梯度所需内存数量与求解器时间步长数量成线性比例</strong>。由于大量内存需求，这通常使得反向传播不可行。我们使用另一种方法，它允许计算内存开销的梯度，这与求解器的时间步长无关。(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Chen et al. (2018)</a>)提出了这种方法称为神经ODEs(neural ODEs)，基于(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Pontryagin, 2018</a>)的伴随方法(the adjoint method)。伴随方法由一个单层前馈ODE通道3直到最后时间<span class="math inline">\(t_M\)</span>在最后状态<span class="math inline">\(\hat{u} (t_M)\)</span>，随后反向传播ODE计算梯度。反向传播是通过先解伴随方程来完成的。</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211013124042.png" style="zoom:50%;" /></p>
+<p>对伴随变量<span class="math inline">\(\lambda\)</span>从<span class="math inline">\(t=t_M\)</span>到<span class="math inline">\(t=0\)</span>，其中<span class="math inline">\(\lambda (t_M)=0\)</span>，然后计算</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211013124526.png" style="zoom:50%;" /></p>
+<p>来得到最终的梯度。</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211013124651.png" style="zoom:65%;" /></p>
+<center>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+<b> 图2： a)不同网格尺寸的相对测试误差。b)真实和学习的系统动力学可视化(网格显示在第一列)</b>
+</div>
+<br>
+</center>
+<h2 id="介绍introduction">10 介绍（Introduction）</h2>
+<p>我们考虑状态<span class="math inline">\(u(x,t) \in R\)</span>随时间<span class="math inline">\(t \in R_+\)</span>而演化，空间位置<span class="math inline">\(x \in \Omega \subset R^D\)</span>的有界邻域<span class="math inline">\(\Omega\)</span>的连续动力系统。我们假定系统由一个未知的偏微分方程(PDE)控制</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211013130045.png" style="zoom:50%;" /></p>
+<p>系统的时间演化<span class="math inline">\(\dot{u}\)</span>依赖于当前的状态<span class="math inline">\(u\)</span>和它的空间一阶和高阶偏导数关于坐标<span class="math inline">\(x\)</span>。这种PDE模型是自然科学的基石，广泛适用于传播系统的建模，如声波行为、流体动力学、散热、天气模式、疾病进展或细胞动力学(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Courant &amp; Hilbert, 2008</a>)。我们的目标是从数据中学习微分<span class="math inline">\(F\)</span>。</p>
+<p>对于特定的系统(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Cajori, 1928</a>)手工推导机械的偏微分方程已有很长的历史，如Navier-Stokes流体动力或Schrodinger的量子方程，并在时间上逼近它们的解(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Ames, 2014</a>)。这些努力由数据驱动的方法加以补充，以推断已知方程中的任何未知或潜在系数(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Isakov, 2006</a>; <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Berg &amp; Nystrom, 2017</a>; <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Santo et al., 2019</a>)，或部分已知的方程(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Freund et al., 2019</a>; <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Seo &amp; Liu, 2019b</a>; <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Seo et al., 2020</a>)。一系列方法研究了已知偏微分方程的解加速神经替代(neural proxies) （<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Lagaris et al., 1998</a>; <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Raissi et al., 2017</a>; <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Weinan &amp; Yu, 2018</a>;<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Sirignano &amp; Spiliopoulos, 2018</a>）或不确定性量化(uncertainty quantification) (<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Khoo et al., 2017</a>)。</p>
+<p><strong>相关的工作。</strong> 最近(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Long et al. (2017)</a>)的开创新工作提出了一种完全非机械化方法PDE-Net，其中控制方程<span class="math inline">\(F\)</span>是从系统快照中学习的，作为一个卷积神经网络(CNN)在输入域离散成一个时空网格(spatio-temporal)。进一步的工作扩展了残差CNNs(Ruthotto &amp; Haber, 2019][])，符号回归神经网络(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Long et al., 2019</a>)，高阶自回归网络(high-order autoregressive network) (<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Geneva &amp; Zabaras, 2020</a>)，前馈网络(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Xu et al., 2019</a>)。这些模型基本上局限于离散输入域的采样效率低的网格，同时它们也不支持随时间的持续演化，使得它们无法处理在现实应用中经常遇到的时间或空间上稀疏不均匀的观测。</p>
+<p>模型如(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Battaglia et al., 2016</a>; <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Chang et al., 2016</a>; <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Sanchez-Gonzalez et al., 2018</a>)对象的状态演化为其相邻对象函数的交互网络有关(the interaction networks where object's state evolves as a function of its neighboring objects)，形成动态关系图而不是网格。与密集的PDE解域(the dense solution fields of PDEs)不同，这些模型在少量移动和交互对象之间应用消息传递，这与严格意义上的微分函数PDE不同。</p>
+<p>(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/guo-dong-san-jian-ke-4">Poli et all. (2019)</a>)提出了图神经常微分方程(graph neural ordinary differential equations, GNODE)作为在图上建模连续时间型号的框架。该框架应用于学习偏微分方程的主要局限性是缺乏关于物理节点位置的空间信息以及缺乏这种类型模型适合的动机。我们的工作可以看作是通过经典的偏微分方程求解技术将基于图的连续时间模型与数据驱动的空间偏微分方程联系起来。</p>
+<h2 id="方法梳理">11 方法梳理</h2>
+<p>考虑一个动力系统其状态<span class="math inline">\(u(x,t)\)</span>，其中<span class="math inline">\(t \in R_+\)</span>，<span class="math inline">\(x \in \Omega \subset R^n\)</span>，<span class="math inline">\(n \in \{1,2,3\}\)</span></p>
+<p><strong>数据：</strong></p>
+<ul>
+<li><p>时间点<span class="math inline">\((t_1,...t_M)\)</span></p></li>
+<li><p>观测点<span class="math inline">\((x_1,...x_N)\)</span></p></li>
+<li><p>观测状态<span class="math inline">\((u_1,...u_M)\)</span>，其中<span class="math inline">\(u_i=(u(t_i,x_{1}),...,u(t_i,x_{N})\)</span></p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211013204617.png" style="zoom:20%;" /></p></li>
+</ul>
+<p>假设系统是由方程 <span class="math display">\[
+\frac{\partial u(t, x)}{\partial t}=F\left(x, u, \nabla_{x} u, \nabla_{x}^{2} u, \cdots\right)
+\]</span> 所掌控。</p>
+<p>模型是基于<strong>直线法</strong>：</p>
+<p><strong>例子</strong>，考虑PDE：<span class="math inline">\(\frac{\partial u }{\partial t}=\nabla^{2}u\)</span></p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211013210955.png" style="zoom:20%;" /></p>
+<p><span class="math display">\[\frac{d u_{i, j}}{d t} \approx \hat{F}\left(x_{i, j}, u_{i, j}, x_{N(i, j)}, u_{N(i, j)}\right) = \frac{u_{i-1,j}+u_{i+1, j}+u_{i,j-1}+u_{i,j+1}-4 u_{i,j}}{h^{2}}\]</span> <span class="math display">\[
+\left(\begin{array}{c}\frac{d u_{1,1}}{d t} \\\vdots \\\frac{d u_{n, n}}{d t}\end{array}\right)=\left(\begin{array}{c}\hat{F}\left(x_{1,1}, u_{1,1}, x_{\mathcal{N}(1,1)}, u_{\mathcal{N}(1,1)}\right) \\\vdots \\\hat{F}\left(x_{n, n}, u_{n, n}, x_{\mathcal{N}(n, n)}, u_{\mathcal{N}(n, n)}\right)\end{array}\right)
+\]</span></p>
+<p><strong>一般地</strong>，考虑PDE:<span class="math inline">\(\frac{\partial u }{\partial t}=F(x,u)\)</span></p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211013211043.png" style="zoom:25%;" /></p>
+<p><span class="math inline">\(\frac{d u_{i}}{d t} \approx \hat{F}\left(x_{i}, u_{i}, x_{N(i)}, u_{N(i)}\right)=?\)</span></p>
+<p><span class="math display">\[
+\left(\begin{array}{c}
+\frac{d u_{1}}{d t} \\
+\vdots \\
+\frac{d u_{N}}{d t}
+\end{array}\right)=\left(\begin{array}{c}
+\hat{F}_{\theta}\left(x_{1}, u_{1}, x_{\mathcal{N}(1)}, u_{\mathcal{N}(1)}\right) \\
+\vdots \\
+\left.\hat{F}_{\theta}(x_{N}, u_{N}, x_{\mathcal{N}(N)}, u_{\mathcal{N}(N)}\right)
+\end{array}\right)
+\]</span></p>
+<p>把<span class="math inline">\(\hat{F_{\theta}}\)</span>表示为</p>
+<p><img src="https://guodongsanjianke.oss-cn-beijing.aliyuncs.com/pictures/20211012221854.png" style="zoom:50%;" /></p>
+<p>即 <span class="math display">\[
+\left(\begin{array}{c}\frac{d u_{1}}{d t} \\\vdots \\\frac{d u_{N}}{d t}\end{array}\right)=\left(\begin{array}{c}\hat{F}_{\theta}\left(x_{\mathcal{N}(1)}-x_{1}, u_{1}, , u_{\mathcal{N}(1)}\right) \\\vdots \\\left.\hat{F}_{\theta}(x_{\mathcal{N}(N)}-x_{N}, u_{N}, , u_{\mathcal{N}(N)}\right)\end{array}\right) \rightarrow u_{pred} \rightarrow Loss(u,u_{pred})
+\]</span></p>
+<h2 id="程序实现">12 程序实现</h2>
+<h3 id="调用一些程序包">12.1 调用一些程序包</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch_geometric.data <span class="keyword">import</span> Data</span><br><span class="line"><span class="keyword">import</span> matplotlib.tri <span class="keyword">as</span> mtric</span><br><span class="line"><span class="keyword">from</span> scipy.spatial <span class="keyword">import</span> Delaunay</span><br></pre></td></tr></table></figure>
+<p><code>import pickle</code>:可以将对象转换为一种可以传输或者储存的格式。</p>
+<h3 id="read_pickle">12.2 read_pickle</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_pickle</span>(<span class="params">keys, path=<span class="string">&quot;./&quot;</span></span>):</span></span><br><span class="line">    data_dict = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> keys:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path+key+<span class="string">&quot;.pkl&quot;</span>, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            data_dict[key] = pickle.load(f)</span><br><span class="line">    <span class="keyword">return</span> data_dict</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://guodongsanjianke.com/2022/01/05/13-43-40/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Jerry.jpg">
+      <meta itemprop="name" content="Ziwei Li">
+      <meta itemprop="description" content="总会有地上的生灵敢于直面雷霆的威光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="果冻三剑客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
             <a href="/2022/01/05/13-43-40/" class="post-title-link" itemprop="url">图神经网络解偏微分方程系列（二）</a>
         </h2>
 
@@ -654,7 +1009,7 @@ G(t)=b_{t} \int_{0}^{1} \frac{u(x, t)}{x} d x,t \geqslant 0
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
